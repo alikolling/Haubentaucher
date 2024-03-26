@@ -9,7 +9,7 @@
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.0"/>
   <arg name="enable_logging" default="false"/>
-  <arg name="enable_ground_truth" default="false"/>
+  <arg name="enable_ground_truth" default="true"/>
   <arg name="log_file" default="$(arg mav_name)"/>
   <arg name="wait_to_record_bag" default="false"/>
   <arg name="enable_mavlink_interface" default="false"/>
@@ -37,4 +37,6 @@
          -model $(arg namespace)"
    respawn="false" output="screen">
   </node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 </launch>
