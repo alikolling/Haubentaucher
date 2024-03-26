@@ -99,6 +99,16 @@
       </inertial>
     </link>
     
+    
+    <joint name="camera_joint" type="fixed">
+      <parent link="${namespace}/base_link"/>
+      <child link="camera_link"/>
+      <origin xyz="0.1 0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="camera_link">
+    </link>
+    
 
     <!-- Set up hydrodynamic plugin given as input parameter 
     <xacro:insert_block name="gazebo"/>-->
