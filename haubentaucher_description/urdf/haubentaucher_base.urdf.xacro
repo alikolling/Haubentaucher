@@ -42,6 +42,30 @@
         <inertia ixx="0.02953" ixy="0.0001" ixz="-0.0142" iyy="0.2303" iyz="0.0038" izz="0.1604" />  <!-- updated 15.09.2023 --> 
     </xacro:property>
 
+    <xacro:macro name="haubentaucher_base" params="namespace *gazebo inertial_reference_frame">
+        <!-- base_link according to ROS conventions: x forward, z up 
+        <link name="${namespace}/base_link">
+          <inertial>
+            <mass value="${mass}"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.02953" ixy="0.0001" ixz="-0.0142" iyy="0.2303" iyz="0.0038" izz="0.1604" />  
+        </link>-->
+
+        <!-- Set up hydrodynamic plugin given as input parameter -->
+        <xacro:insert_block name="gazebo"/>
+
+        <!-- optional: plugin to test compare Gazebo's returned accelerations
+        <gazebo>
+          <plugin name="${namespace}_test_plugin" filename="libuuv_accelerations_test_plugin.so">
+            <link_name>${namespace}/base_link</link_name>
+          </plugin>
+        </gazebo> -->
+
+        <xacro:include filename="$(find haubentaucher_description)/urdf/haubentaucher_actuators.xacro"/>
+
+
+    </xacro:macro>
+
     <!-- inertia of a single rotor, assuming it is a cuboid. Height=3mm, width=15mm -->
     <xacro:property name="rotor_inertia">
         <xacro:box_inertia x="${radius_rotor}" y="0.015" z="0.003" mass="${mass_rotor*rotor_velocity_slowdown_sim}" />
@@ -68,8 +92,8 @@
     <!-- Instantiate rotors -->
   <xacro:vertical_rotor
     robot_namespace="${namespace}"
-    suffix="front"
-    direction="cw"
+    suffix="front_right"
+    direction="ccw"
     motor_constant="${motor_constant}"
     moment_constant="${moment_constant}"
     parent="${namespace}/base_link"
@@ -81,16 +105,16 @@
     motor_number="0"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Red"
+    color="Blue"
     use_own_mesh="false"
     mesh="">
-    <origin xyz="${rotor_x_offset} ${rotor_y_offset} ${rotor_offset_top}" rpy="0 0 0" /> <!-- look at the definition above to understand how the position is defined -->
+    <origin xyz="${rotor_x_offset} -${rotor_y_offset} ${rotor_offset_top}" rpy="0 0 0" /> <!-- look at the definition above to understand how the position is defined -->
     <xacro:insert_block name="rotor_inertia" />
   </xacro:vertical_rotor>
 
   <xacro:vertical_rotor
     robot_namespace="${namespace}"
-    suffix="left"
+    suffix="back_left"
     direction="ccw"
     motor_constant="${motor_constant}"
     moment_constant="${moment_constant}"
@@ -106,13 +130,13 @@
     color="Blue"
     use_own_mesh="false"
     mesh="">
-    <origin xyz="${rotor_x_offset} -${rotor_y_offset} ${rotor_offset_top}" rpy="0 0 0" />
+    <origin xyz="-${rotor_x_offset} ${rotor_y_offset} ${rotor_offset_top}" rpy="0 0 0" />
     <xacro:insert_block name="rotor_inertia" />
   </xacro:vertical_rotor>
 
   <xacro:vertical_rotor
     robot_namespace="${namespace}"
-    suffix="back"
+    suffix="front_left"
     direction="cw"
     motor_constant="${motor_constant}"
     moment_constant="${moment_constant}"
@@ -125,17 +149,17 @@
     motor_number="2"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Blue"
+    color="Red"
     use_own_mesh="false"
     mesh="">
-    <origin xyz="-${rotor_x_offset} ${rotor_y_offset} ${rotor_offset_top}" rpy="0 0 0" />
+    <origin xyz="${rotor_x_offset} ${rotor_y_offset} ${rotor_offset_top}" rpy="0 0 0" />
     <xacro:insert_block name="rotor_inertia" />
   </xacro:vertical_rotor>
 
   <xacro:vertical_rotor
     robot_namespace="${namespace}"
-    suffix="right"
-    direction="ccw"
+    suffix="back_right"
+    direction="cw"
     motor_constant="${motor_constant}"
     moment_constant="${moment_constant}"
     parent="${namespace}/base_link"
@@ -147,7 +171,7 @@
     motor_number="3"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Blue"
+    color="Red"
     use_own_mesh="false"
     mesh="">
     <origin xyz="-${rotor_x_offset} -${rotor_y_offset} ${rotor_offset_top}" rpy="0 0 0" />

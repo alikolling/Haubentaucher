@@ -8,11 +8,8 @@
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.0"/>
-  <arg name="roll" default="0.0"/>
-  <arg name="pitch" default="0.0"/>
-  <arg name="yaw" default="0.0"/>
   <arg name="enable_logging" default="false"/>
-  <arg name="enable_ground_truth" default="false"/>
+  <arg name="enable_ground_truth" default="true"/>
   <arg name="log_file" default="$(arg mav_name)"/>
   <arg name="wait_to_record_bag" default="false"/>
   <arg name="enable_mavlink_interface" default="false"/>
@@ -30,7 +27,6 @@
   />
   <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />
 
-
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="spawn_$(arg namespace)" pkg="gazebo_ros" type="spawn_model"
    args="-param robot_description
@@ -41,11 +37,6 @@
          -model $(arg namespace)"
    respawn="false" output="screen">
   </node>
-  
-  <include file="$(find uuv_assistants)/launch/message_to_tf.launch">
-    <arg name="namespace" value="$(arg namespace)"/>
-    <arg name="world_frame" value="world"/>
-    <arg name="child_frame_id" value="/$(arg namespace)/base_link"/>
-  </include>
-   
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 </launch>
