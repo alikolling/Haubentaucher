@@ -17,8 +17,8 @@
         <material>Gazebo/FlatBlack</material>
         <sensor type="ray" name="VLP-16-VLP16-Simplified">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
-        <update_rate>5</update_rate>
+        <visualize>false</visualize>
+        <update_rate>500</update_rate>
         <ray>
             <scan>
                 <horizontal>

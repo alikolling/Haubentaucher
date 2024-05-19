@@ -4,7 +4,7 @@
 
   <arg name="mav_name" default="$(arg quad_name)"/>
   <arg name="model" value="$(find rotors_description)/urdf/mav_generic_odometry_sensor.gazebo"/>
-  <arg name="world_name" default="$(find haubentaucher_gazebo)/worlds/stage_1_nw.world"/>
+  <arg name="world_name" default="$(find haubentaucher_gazebo)/worlds/stage_1.world"/>
 
   <arg name="use_unity_editor" default="true" />
   <arg name="paused" value="false"/>
