@@ -110,11 +110,21 @@
     </link>
     
 
-    <!-- Set up hydrodynamic plugin given as input parameter 
-    <xacro:insert_block name="gazebo"/>-->
 
-    <!-- <xacro:include filename="$(find hydrone_aerial_underwater_description)/urdf/hydrone_aerial_underwater_sensors.xacro" /> -->
-    <!-- <xacro:include filename="$(find hydrone_aerial_underwater_description)/urdf/hydrone_aerial_underwater_actuators.xacro" /> -->
+  <!-- Add a wind gust starting at 40s and lasting for 2s. -->
+  <xacro:wind_plugin_macro
+    namespace="${namespace}"
+    xyz_offset="0 0 0"
+    wind_direction="1 0 0"
+    wind_force_mean="0"
+    wind_gust_direction="1 1 0"
+    wind_gust_duration="2"
+    wind_gust_start="40"
+    wind_gust_force_mean="5"
+    wind_speed_mean="0"
+    use_custom_static_wind_field="false"
+    custom_wind_field_path="">
+  </xacro:wind_plugin_macro>
 
 
 </robot>
