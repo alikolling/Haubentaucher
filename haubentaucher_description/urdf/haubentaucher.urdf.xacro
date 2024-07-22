@@ -111,20 +111,20 @@
     
 
 
-  <!-- Add a wind gust starting at 40s and lasting for 2s. -->
-  <xacro:wind_plugin_macro
-    namespace="${namespace}"
-    xyz_offset="0 0 0"
-    wind_direction="1 0 0"
-    wind_force_mean="0"
-    wind_gust_direction="1 1 0"
-    wind_gust_duration="2"
-    wind_gust_start="40"
-    wind_gust_force_mean="5"
-    wind_speed_mean="0"
-    use_custom_static_wind_field="false"
-    custom_wind_field_path="">
-  </xacro:wind_plugin_macro>
-
+  <!-- Add a wind gust starting at 40s and lasting for 2s. 
+<xacro:wind_plugin_macro
+  namespace="${namespace}"
+  xyz_offset="0 0 0"
+  wind_direction="1 0 0"
+  wind_force_mean="0.0"
+  wind_gust_direction="0 1 0"
+  wind_gust_duration="0.0"
+  wind_gust_start="0.0"
+  wind_gust_force_mean="0.0"
+  wind_speed_mean="50.0"
+  use_custom_static_wind_field="true"
+  custom_wind_field_path="$(find rotors_gazebo)/models/hemicyl/wind_field_hemicyl.txt">
+</xacro:wind_plugin_macro>-->
 
 </robot>
+

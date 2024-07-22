@@ -1,10 +1,11 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 import numpy as np
 from rotors_comm.msg import *
 import rospy
+import random
 
 class OUNoise(object):
-    def __init__(self, action_space, mu=0.0, theta=0.15, max_sigma=0.99, min_sigma=0.2, decay_period=1000000):
+    def __init__(self, action_space, mu=0.0, theta=0.1, max_sigma=0.99, min_sigma=0.2, decay_period=1000000):
         self.mu           = mu
         self.theta        = theta
         self.sigma        = max_sigma
@@ -36,13 +37,13 @@ if __name__ == "__main__":
 
     noise = OUNoise(2, max_sigma=.175, min_sigma=0.03, decay_period=8000000)
 
-    pub = rospy.Publisher('/hydrone_aerial_underwater/wind_speed', WindSpeed, queue_size=10)    
-    r = rospy.Rate(1) # 10hz
+    pub = rospy.Publisher('/haubentaucher/wind_speed', WindSpeed, queue_size=10)    
+    r = rospy.Rate(0.016666667) # 10hz
     while not rospy.is_shutdown():
         speed = WindSpeed()
         n = noise.get_noise()
-        speed.velocity.x = n[0]
-        speed.velocity.y = n[1]
+        speed.velocity.x = 5 * random.choice((-1, 1)) + n[0] 
+        speed.velocity.y = 5 * random.choice((-1, 1)) + n[1] 
         # speed.velocity.z = random.choice([random.uniform(-4.0, -3.0), random.uniform(3.0, 4.0)])
         pub.publish(speed)
         r.sleep()  
