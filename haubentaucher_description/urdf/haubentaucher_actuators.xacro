@@ -20,7 +20,7 @@
 
   <!-- Thruster joint and link snippet -->
   <xacro:macro name="thruster_macro"
-    params="namespace thruster_id *origin">
+    params="namespace thruster_id *origin *axis">
     <xacro:thruster_module_first_order_basic_fcn_macro
       namespace="${namespace}"
       thruster_id="${thruster_id}"
@@ -28,17 +28,21 @@
       dyn_time_constant="0.05"
       rotor_constant="0.00031">
       <xacro:insert_block name="origin"/>
+      <xacro:insert_block name="axis"/>
     </xacro:thruster_module_first_order_basic_fcn_macro>
   </xacro:macro>
 
   <xacro:thruster_macro namespace="${namespace}" thruster_id="0">
-    <origin xyz="0.12 0 -0.1" rpy="-3.14 0 0"/>
+    <origin xyz="0.12 0 -0.1" rpy="${pi} 0 0"/>
+    <axis xyz="0 0 1"/>
   </xacro:thruster_macro>
   <xacro:thruster_macro namespace="${namespace}" thruster_id="1">
-    <origin xyz="0 -0.205500 0.088000" rpy="0 -1.5707 0"/>
+    <origin xyz="0 -0.205500 0.088000" rpy="0 ${pi/2} 0"/>
+    <axis xyz="0 0 1"/>
   </xacro:thruster_macro>
   <xacro:thruster_macro namespace="${namespace}" thruster_id="2">
-    <origin xyz="0 0.205500 0.088000" rpy="0 -1.5707 0"/>
+    <origin xyz="0 0.205500 0.088000" rpy="0 ${pi/2} 0"/>
+    <axis xyz="0 0 1"/>
   </xacro:thruster_macro>
 
 

@@ -135,13 +135,6 @@
     <link name="camera_link">
     </link>
     
-    
-
-    <!-- Set up hydrodynamic plugin given as input parameter 
-    <xacro:insert_block name="gazebo"/>-->
-
-    <!-- <xacro:include filename="$(find hydrone_aerial_underwater_description)/urdf/hydrone_aerial_underwater_sensors.xacro" /> -->
-    <!-- <xacro:include filename="$(find hydrone_aerial_underwater_description)/urdf/hydrone_aerial_underwater_actuators.xacro" /> -->
 
 
 </robot>
