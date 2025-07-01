@@ -122,6 +122,71 @@
     </include>
     
     <include>
+      <uri>model://herkules_ship_wreck</uri>
+      <pose>187.476532 60.891033 -2.427883 0 0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_1</name>
+      <uri>model://Tree_1</uri>
+      <pose>202.327 56.3583 1.37889 0 -0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_2</name>
+      <uri>model://Tree_1</uri>
+      <pose>196.705 47.8989 0.826171 0 -0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_3</name>
+      <uri>model://Tree_1</uri>
+      <pose>192.368 53.7398 0.14 0 -0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_4</name>
+      <uri>model://Tree_1</uri>
+      <pose>186.868 51.0981 0.14 0 -0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_5</name>
+      <uri>model://Tree_1</uri>
+      <pose>193.325 65.5987 1.12297 0 -0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_6</name>
+      <uri>model://Tree_1</uri>
+      <pose>188.476532 65.891033 0.14 0 0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_7</name>
+      <uri>model://Tree_1</uri>
+      <pose>176.224 68.9638 0.14 0 -0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_8</name>
+      <uri>model://Tree_1</uri>
+      <pose>201.48 62.9129 1.76021 0 -0 1.57</pose>
+    </include>
+    
+    <include>
+      <name>tree_9</name>
+      <uri>model://Tree_1</uri>
+      <pose>188.48 71.1451 1.34971 0 -0 1.57</pose>
+    </include>
+    
+    <!--<include>
+      <name>gate</name>
+      <pose>1.0 0 6.0 0 0 1.570796327</pose>
+      <uri>model://dronerace_gate_2018</uri>
+    </include>-->
+       
+    <include>
       <uri>model://goal_box</uri>
       <pose>0.0 1.0 0.05 0 0 0</pose>
       <name>goal_box</name>
