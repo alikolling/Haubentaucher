@@ -82,32 +82,38 @@
 
     <include>
       <uri>model://grey_wall</uri>
-      <pose>0 -5.0 -1.0 0 0 0</pose>
+      <pose>0 -5.0 -2.5 0 0 0</pose>
       <name>grey_wall_0</name>
     </include>
 
     <include>
       <uri>model://grey_wall</uri>
-      <pose>0 5.0 -1.0 0 0 0</pose>
+      <pose>0 5.0 -2.5 0 0 0</pose>
       <name>grey_wall_1</name>
     </include>
 
     <include>
       <uri>model://grey_wall</uri>
-      <pose>-5.0 0.0 -1.0 0 0 1.57079632679</pose>
+      <pose>-5.0 0.0 -2.5 0 0 1.57079632679</pose>
       <name>grey_wall_2</name>
     </include>
 
     <include>
       <uri>model://grey_wall</uri>
-      <pose>5.0 0.0 -1.0 0 0 1.57079632679</pose>
+      <pose>5.0 0.0 -2.5 0 0 1.57079632679</pose>
       <name>grey_wall_3</name>
     </include>
 
     <include>
       <uri>model://grey_wall</uri>
-      <pose>0.0 1.5 -1.4 1.57079632679 0 0</pose>
+      <pose>0.0 1.5 -6.0 1.57079632679 0 0</pose>
       <name>grey_wall_4</name>
+    </include>
+    
+    <include>
+      <uri>model://goal_box</uri>
+      <pose>0.0 1.0 0.05 0 0 0</pose>
+      <name>goal_box</name>
     </include>
 
     <!-- <include>
