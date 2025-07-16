@@ -85,35 +85,6 @@
       <pose>0 0 0 0 0 0</pose>
     </include>
 
-    <include>
-      <uri>model://grey_wall</uri>
-      <pose>0 -5.0 -3.0 0 0 0</pose>
-      <name>grey_wall_0</name>
-    </include>
-
-    <include>
-      <uri>model://grey_wall</uri>
-      <pose>0 5.0 -3.0 0 0 0</pose>
-      <name>grey_wall_1</name>
-    </include>
-
-    <include>
-      <uri>model://grey_wall</uri>
-      <pose>-5.0 0.0 -3.0 0 0 1.57079632679</pose>
-      <name>grey_wall_2</name>
-    </include>
-
-    <include>
-      <uri>model://grey_wall</uri>
-      <pose>5.0 0.0 -3.0 0 0 1.57079632679</pose>
-      <name>grey_wall_3</name>
-    </include>
-
-    <include>
-      <uri>model://grey_wall</uri>
-      <pose>0.0 1.5 -5.4 1.57079632679 0 0</pose>
-      <name>grey_wall_4</name>
-    </include>
 
     <!-- <include>
       <uri>model://grey_wall</uri>
@@ -125,31 +96,133 @@
       <uri>model://obstacle_1</uri>
       <pose>2.0 2.0 -2.5 0.0 0 0</pose>
       <name>obstacle_1</name>
+      <static>true</static>
     </include>
 
     <include>
       <uri>model://obstacle_1</uri>
       <pose>-2.0 -2.0 -2.5 0.0 0 0</pose>
       <name>obstacle_2</name>
+      <static>true</static>
     </include>
 
     <include>
       <uri>model://obstacle_1</uri>
       <pose>2.0 -2.0 -2.5 0.0 0 0</pose>
       <name>obstacle_3</name>
+      <static>true</static>
     </include>
 
     <include>
       <uri>model://obstacle_1</uri>
       <pose>-2.0 2.0 -2.5 0.0 0 0</pose>
       <name>obstacle_4</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>-2.0 6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_5</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>-6.0 2.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_6</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>6.0 2.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_7</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>6.0 -2.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_8</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>-6.0 -2.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_9</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>6.0 6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_10</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>-6.0 6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_11</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>6.0 -6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_12</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>-6.0 -6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_13</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>-2.0 -6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_14</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>2.0 -6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_15</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>2.0 6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_16</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://obstacle_1</uri>
+      <pose>2.0 6.0 -2.5 0.0 0 0</pose>
+      <name>obstacle_17</name>
+      <static>true</static>
+    </include>
+    
+    <include>
+      <uri>model://goal_box</uri>
+      <pose>0.0 1.0 0.05 0 0 0</pose>
+      <name>goal_box</name>
     </include>
 
     <!-- Heightmap -->
-    <!-- <include>
+    <include>
       <uri>model://sand_heightmap</uri>
       <pose>-120 0 -7 0 0 0</pose>
-    </include> -->
+      <static>true</static>
+    </include>
 
     <plugin name="underwater_current_plugin" filename="libuuv_underwater_current_ros_plugin.so">
       <namespace>hydrodynamics</namespace>
