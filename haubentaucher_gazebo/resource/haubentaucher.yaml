@@ -1,4 +1,4 @@
-# Iris vehicle parameters
+# Haubentaucher vehicle parameters
 # mass: 1862.87
 mass: 6.737 #kg
 # inertia: {xx: 525.39, xy: 1.44, xz: 33.41, yy: 794.20, yz: 2.6, zz: 691.23}

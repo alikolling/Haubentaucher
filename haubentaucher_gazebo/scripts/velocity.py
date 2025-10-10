@@ -15,7 +15,7 @@ cmd_vel = Twist()
 
 cmd_vel_x = 0
 
-pub = rospy.Publisher('/hydrone_aerial/command/trajectory', MultiDOFJointTrajectory, queue_size=10)
+pub = rospy.Publisher('/haubentaucher/command/trajectory', MultiDOFJointTrajectory, queue_size=10)
 
 def quaternion_to_euler(x, y, z, w):
 
@@ -79,7 +79,11 @@ def position_callback(data):
 if __name__ == "__main__":
     rospy.init_node("velocity_node", anonymous=False)
 
-    rospy.Subscriber("/hydrone_aerial/ground_truth/odometry", Odometry, position_callback)
-    rospy.Subscriber("/hydrone_aerial/cmd_vel", Twist, velocity_callback)
+    rospy.Subscriber("/haubentaucher/ground_truth/odometry", Odometry, position_callback)
+    rospy.Subscriber("/haubentaucher/cmd_vel", Twist, velocity_callback)
 
     rospy.spin()
+    
+    
+    
+    
