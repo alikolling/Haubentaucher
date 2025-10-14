@@ -52,12 +52,11 @@
       <arg name="y" value="$(arg y_init)" />
       <arg name="z" value="$(arg z_init)" />
     </include>
-    <!--<node name="lee_position_controller_node" pkg="rotors_control" type="lee_position_controller_node" output="screen">
-      <rosparam command="load" file="$(find haubentaucher_gazebo)/resource/lee_controller_$(arg mav_name).yaml" />
+    <node name="roll_pitch_yawrate_thrust_controller_node" pkg="rotors_control" type="roll_pitch_yawrate_thrust_controller_node" output="screen">
+      <rosparam command="load" file="$(find haubentaucher_gazebo)/resource/roll_pitch_yawrate_thrust_controller_$(arg mav_name).yaml" />
       <rosparam command="load" file="$(find haubentaucher_gazebo)/resource/$(arg mav_name).yaml" />
       <remap from="odometry" to="odometry_sensor1/odometry" />
     </node>
-    <node name="velocity_node" pkg="haubentaucher_gazebo" type="velocity.py" output="screen"/>!-->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     
